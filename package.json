@@ -1,0 +1,24 @@
+{
+    "private": true,
+    "name": "trading-chart-system",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "license": "MIT",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "clean": "rm -rf node_modules && rm -rf packages/shared/node_modules && rm -rf packages/mobile/node_modules && rm -rf packages/web/node_modules",
+        "prepare": "yarn shared-nodeModules && yarn mobile-nodeModules && yarn web-nodeModules && yarn shared-build",
+        "web-nodeModules": "yarn workspace web install",
+        "web-dev": "yarn workspace web dev",
+        "web-build": "yarn workspace web build",
+        "mobile-nodeModules": "yarn workspace mobile install",
+        "mobile-start": "yarn workspace mobile start",
+        "mobile-pods": "yarn workspace mobile pods",
+        "mobile-ios": "yarn workspace mobile ios",
+        "mobile-android": "yarn workspace mobile android",
+        "shared-nodeModules": "yarn workspace shared install",
+        "shared-build": "yarn workspace shared build"
+    }
+}
